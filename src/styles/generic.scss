@@ -1,0 +1,33 @@
+@import './variables.scss';
+
+.container{
+    max-width: 1360px;
+    margin: auto;
+    padding: $padding-y $padding-x;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul{
+        list-style:none;
+
+        li{
+            display: inline-block;
+
+            a{
+                padding: 10px;
+                text-decoration: none;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                letter-spacing: -1px;
+                color: black;
+
+                &:hover{
+                    color: $primary-color
+                }
+            }
+        }
+    }
+}
