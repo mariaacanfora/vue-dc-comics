@@ -1,9 +1,16 @@
 @import './variables.scss';
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 .container{
     max-width: 1360px;
     margin: auto;
-    padding: $padding-y $padding-x;
+    font-family: $primary-font;
 }
 
 nav{
@@ -13,6 +20,7 @@ nav{
 
     ul{
         list-style:none;
+        padding: $padding-y-container;
 
         li{
             display: inline-block;
@@ -20,7 +28,6 @@ nav{
             a{
                 padding: 10px;
                 text-decoration: none;
-                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                 letter-spacing: -1px;
                 color: black;
 
@@ -29,5 +36,15 @@ nav{
                 }
             }
         }
+    }
+}
+
+main{
+    background-color: black;
+    color: white;
+    padding: $padding-y-container;
+
+    p{
+        font-size: 30px;
     }
 }
