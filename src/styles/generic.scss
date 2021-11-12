@@ -8,7 +8,7 @@
 
 
 .container{
-    max-width: 1360px;
+    max-width: $max-width-container;
     margin: auto;
     font-family: $primary-font;
 }
@@ -51,12 +51,32 @@ nav{
 }
 
 main{
-    background-color: black;
+    background-color: #1c1c1c;
     color: white;
-    padding: $padding-y-container;
+    /* padding: $padding-y-container; */
 
-    p{
-        font-size: 30px;
+    .main-hero{
+        width: 100%;
+        background-image: url('assets/img/jumbotron.jpg');
+        padding: 200px 0;
+    }
+
+    .container{
+        padding: $padding-y-container 0;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $padding-x * 2.05;
+
+        .label-cs{
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(-50%);
+            background-color: $primary-color;
+            padding: $padding-y $padding-x;
+        }
     }
 }
 
