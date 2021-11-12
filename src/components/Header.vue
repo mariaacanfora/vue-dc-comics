@@ -3,7 +3,8 @@
       <nav>
           <img src="../assets/img/dc-logo.png" alt="dc-logo">
           <ul>
-             <li v-for="(element, i) in navLinks" :key="i"><a :href="element.src">{{element.txt}}</a></li> 
+             <li v-for="(element, i) in navLinks" :key="i" ><a :href="element.src" @click.prevent="currentTab = i">{{element.txt}}</a>
+             <div :class="i === currentTab ? 'active' : ''"></div></li> 
           </ul>
       </nav>
   </header>
@@ -14,6 +15,7 @@ export default {
     name: 'Header',
     data(){
         return {
+            currentTab: 0,
             navLinks: [
             {
                 txt: "CHARACTERS",

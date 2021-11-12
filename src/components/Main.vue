@@ -9,9 +9,9 @@
         CURRENT SERIES
       </div>
 
-      <Card v-for="(card, i) in dcList" :key="i" :img="card.thumb" :title="card.series.toUpperCase()">
-        
-      </Card>
+      <Card v-for="(card, i) in dcList" :key="i" :img="card.thumb" :title="card.series.toUpperCase()" :price="card.price" :description="card.type"></Card>
+
+      <button>LOAD MORE</button>
     </div>
   </main>
 </template>

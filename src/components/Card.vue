@@ -1,19 +1,27 @@
 <template>
   <div class="card-col">
-    <div class="img-container">
+    <a href="#">
+      <div class="img-container">
       <img
         :src="img"
         :alt="title"
       />
-    </div>
-    <p class="card-title"> {{title}} </p>
+      <div class="overlay">
+        <span>{{price}}</span> <br>
+        <span>{{description}}</span>
+      </div>
+
+      </div>
+      <p class="card-title"> {{title}} </p>
+
+    </a>
   </div>
 </template>
 
 <script>
 export default {
   name: "Card",
-  props:  ["img", "title"]
+  props:  ["img", "title", "price", "description"]
 };
 </script>
 
@@ -22,10 +30,46 @@ export default {
 .card-col {
   width: calc(100% / 6 - $padding-x * 2.05);
 
+  a{
+    display: inline-block;
+    //overflow: hidden;
+    width: 100%;
+    position: relative;   
+    color: white;
+    text-decoration: none;
+
   .img-container {
-    height: $max-width-container / 6;
+    height: $max-width-container / 6 -  $padding-x * 2.05;
     overflow: hidden;
+    position: relative;
+
+    .overlay{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(4px);
+      transition: opacity .3s;
+    }
   }
+
+  &:hover{
+      .overlay{
+        opacity: 1;
+      }
+    } 
+  }
+  
+
+ 
 
   img {
     width: 100%;
